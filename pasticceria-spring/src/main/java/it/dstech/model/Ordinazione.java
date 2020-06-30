@@ -15,6 +15,8 @@ public class Ordinazione {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 	
+	private boolean verificaConsegna = false;
+
 	@ManyToOne
 	private Cliente cliente;
 	
@@ -27,6 +29,21 @@ public class Ordinazione {
 	private int sconto;
 	
 	public Ordinazione() {}
+	
+	
+
+	public Ordinazione(long id, boolean verificaConsegna, Cliente cliente, List<Dolce> listaDolci, String consegna,
+			double costoOrdinazione, int sconto) {
+		super();
+		this.verificaConsegna = verificaConsegna;
+		this.cliente = cliente;
+		this.listaDolci = listaDolci;
+		this.consegna = consegna;
+		this.costoOrdinazione = costoOrdinazione;
+		this.sconto = sconto;
+	}
+
+
 
 	public long getId() {
 		return id;
@@ -43,7 +60,14 @@ public class Ordinazione {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	
+	public boolean isVerificaConsegna() {
+		return verificaConsegna;
+	}
 
+	public void setVerificaConsegna(boolean verificaConsegna) {
+		this.verificaConsegna = verificaConsegna;
+	}
 	public List<Dolce> getListaDolci() {
 		return listaDolci;
 	}

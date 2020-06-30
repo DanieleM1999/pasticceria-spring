@@ -15,17 +15,20 @@ public class Dolce {
 	
 	private String nome;
 	
+	private Ricetta ricetta;
+	
 	private int quantita;
 	
 	private double costoDolce;
 	
 	public Dolce() {}
 
-	public Dolce(long id, String nome, int quantita, double costoDolce) {
+	public Dolce(long id, String nome, int quantita, double costoDolce, Ricetta ricetta) {
 		this.id = id;
 		this.nome = nome;
 		this.quantita = quantita;
 		this.costoDolce = costoDolce;
+		this.ricetta = ricetta;
 	}
 
 	public long getId() {
@@ -58,6 +61,16 @@ public class Dolce {
 
 	public void setCostoDolce(double costoDolce) {
 		this.costoDolce = costoDolce;
+	}
+
+	
+	
+	public Ricetta getRicetta() {
+		return ricetta;
+	}
+
+	public void setRicetta(Ricetta ricetta) {
+		this.ricetta = ricetta;
 	}
 
 	@Override
